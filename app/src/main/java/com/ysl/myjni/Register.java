@@ -3,8 +3,9 @@ package com.ysl.myjni;
 public class Register {
 
     static {
-        System.load("C:\\Work\\CLionProjects\\JNIRegister\\cmake-build-debug" +
-                "\\libHello.dll");
+//        System.load("C:\\Work\\CLionProjects\\JNIRegister\\cmake-build-debug" +
+//                "\\libHello.dll");
+        System.loadLibrary("Hello");
         System.load("C:\\Work\\CLionProjects\\JNIRegister\\cmake-build-debug" +
                 "\\libDyHello.dll");
     }
