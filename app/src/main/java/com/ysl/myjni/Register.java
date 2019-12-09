@@ -14,6 +14,12 @@ public class Register {
                 "\\libDyHello.dll");
     }
 
+    public int num = 101;
+    public native void getField();
+
+    public static int staNum = 1000;
+    public native void getStaField();
+
     public native String helloworld();
     public native String dyHello();
     public native String dyHello(String s);
@@ -37,7 +43,15 @@ public class Register {
 //        System.out.println(helloworld);
 //        String dyHello = register.dyHello();
 //        System.out.println(dyHello);
-        String ysl = register.dyHello("ysl");
-        System.out.println("android -------> "+ysl);
+//        String ysl = register.dyHello("ysl");
+//        System.out.println("android -------> "+ysl);
+
+//        System.out.println("调用前num = "+register.num);
+//        register.getField();
+//        System.out.println("调用后num = "+register.num);
+
+        System.out.println("调用前staNum = "+register.staNum);
+        register.getStaField();
+        System.out.println("调用后staNum = "+register.staNum);
     }
 }
