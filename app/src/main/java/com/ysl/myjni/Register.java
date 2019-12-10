@@ -1,5 +1,7 @@
 package com.ysl.myjni;
 
+import android.provider.MediaStore;
+
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -13,6 +15,10 @@ public class Register {
         System.load("C:\\Work\\CLionProjects\\JNIRegister\\cmake-build-debug" +
                 "\\libDyHello.dll");
     }
+
+    public native void getMethod();
+    public native String newString(int i);
+    public native String javaCall();
 
     public int num = 101;
     public native void getField();
@@ -38,11 +44,15 @@ public class Register {
     public static void main(String[] args) {
 //        String property = System.getProperty("java.library.path");
 //        System.out.println("java.library.path = "+property);
+
         Register register = new Register();
+
 //        String helloworld = register.helloworld();
 //        System.out.println(helloworld);
+
 //        String dyHello = register.dyHello();
 //        System.out.println(dyHello);
+
 //        String ysl = register.dyHello("ysl");
 //        System.out.println("android -------> "+ysl);
 
@@ -50,8 +60,14 @@ public class Register {
 //        register.getField();
 //        System.out.println("调用后num = "+register.num);
 
-        System.out.println("调用前staNum = "+register.staNum);
-        register.getStaField();
-        System.out.println("调用后staNum = "+register.staNum);
+//        System.out.println("调用前staNum = "+register.staNum);
+//        register.getStaField();
+//        System.out.println("调用后staNum = "+register.staNum);
+
+//        register.getMethod();//jni调用方法
+
+        register.javaCall();
+        register.javaCall();
     }
+
 }
